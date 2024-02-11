@@ -1,0 +1,51 @@
+.header {
+  height: 55px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0px 24px;
+}
+
+.displayButton {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  font-size: 16px;
+  position: relative;
+}
+.displayContainer {
+  position: absolute;
+  top: 34px;
+  left: 0px;
+  font-size: 14px;
+  padding: 16px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  background: #fcfcfc;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1;
+}
+.grouping {
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  justify-content: space-between;
+}
+.ordering {
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  justify-content: space-between;
+}
+
+.button-wrapper {
+  position: relative;
+}
