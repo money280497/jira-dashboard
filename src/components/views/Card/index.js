@@ -15,11 +15,19 @@ export default function Card({ item }) {
   const isActive = (userId) => {
     return users.filter(user=> user.id === userId)[0].available;
   }
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
   return (
     <div className="container">
       <div className="card-header">
         <p>{item.id}</p>
-        <p className="user">
+        <p className="user" style= {{backgroundColor: getRandomColor()}}>
           {getUserInitials(item.userId)}
           <span className= {isActive ? "status-dot bg-online" : "status-dot bg-offline"}></span>
         </p>
