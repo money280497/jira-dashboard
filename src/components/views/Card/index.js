@@ -10,7 +10,7 @@ export default function Card({ item }) {
   } = useContext(DataContext);
 
   const getUserInitials = (userId) => {
-    return users.filter(user=> user.id === userId)[0].name.split(" ").map((n)=>n[0].toUpperCase()).join("")
+    return users?.filter(user=> user.id === userId)[0]?.name?.split(" ").map((n)=>n[0].toUpperCase()).join("");
   }
   const isActive = (userId) => {
     return users.filter(user=> user.id === userId)[0].available;
@@ -28,8 +28,8 @@ export default function Card({ item }) {
       <div className="card-header">
         <p>{item.id}</p>
         <p className="user" style= {{backgroundColor: getRandomColor()}}>
-          {getUserInitials(item.userId)}
-          <span className= {isActive ? "status-dot bg-online" : "status-dot bg-offline"}></span>
+          {getUserInitials(item?.userId)}
+          <span className= {`status-dot ${isActive ? " bg-online" : "bg-offline"}`}></span>
         </p>
       </div>
       <div className="main">
