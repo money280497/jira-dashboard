@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Card.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HiDotsHorizontal } from "react-icons/hi";
-
-import {
-  faUser,
-  faExclamation,
-  faCircleDot,
-} from '@fortawesome/free-solid-svg-icons';
+import { GoDotFill } from "react-icons/go";
+import { DataContext } from '../../../contextapi/DataContext';
 
 export default function Card({ item }) {
+  const {
+    data: { users },
+  } = useContext(DataContext);
+
+  const getUserInitials = (userId) => {
+    return users.filter(user=> user.id === userId)[0].name.split(" ").map((n)=>n[0].toUpperCase()).join("")
+  }
+  const isActive = (userId) => {
+    return users.filter(user=> user.id === userId)[0].available;
+  }
   return (
     <div className="container">
       <div className="card-header">
         <p>{item.id}</p>
         <p className="user">
-          <FontAwesomeIcon icon={faUser} size="lg" />
+          {getUserInitials(item.userId)}
+          <span className= {isActive ? "status-dot bg-online" : "status-dot bg-offline"}></span>
         </p>
       </div>
       <div className="main">
@@ -26,7 +32,7 @@ export default function Card({ item }) {
           <HiDotsHorizontal />
         </p>
         <p className="status-container">
-          <FontAwesomeIcon icon={faCircleDot} />
+          <GoDotFill />
           <p className="status">{item?.tag[0]}</p>
         </p>
       </div>

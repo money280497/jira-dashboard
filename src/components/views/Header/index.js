@@ -1,10 +1,4 @@
 import React, { useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLayerGroup,
-  faArrowDown,
-  faArrowLeft,
-} from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 import HeaderFilter from './HeaderFilter.js';
 import { DataContext } from '../../../contextapi/DataContext';
