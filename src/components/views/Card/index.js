@@ -1,6 +1,8 @@
 import React from 'react';
 import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { HiDotsHorizontal } from "react-icons/hi";
+
 import {
   faUser,
   faExclamation,
@@ -21,7 +23,7 @@ export default function Card({ item }) {
       </div>
       <div className="content">
         <p className="icon-container">
-          <FontAwesomeIcon icon={faExclamation} />
+          <HiDotsHorizontal />
         </p>
         <p className="status-container">
           <FontAwesomeIcon icon={faCircleDot} />

@@ -49,3 +49,7 @@
 .button-wrapper {
   position: relative;
 }
+
+.rotate-90 {
+  rotate: 90deg;
+}

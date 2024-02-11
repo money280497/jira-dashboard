@@ -8,6 +8,7 @@ import {
 import './Header.css';
 import HeaderFilter from './HeaderFilter.js';
 import { DataContext } from '../../../contextapi/DataContext';
+import { HiAdjustments, HiChevronDown, HiChevronUp } from "react-icons/hi";
 
 export default function Header() {
   const { display, setDisplay } = useContext(DataContext);
@@ -23,10 +24,10 @@ export default function Header() {
           className="displayButton"
           onClick={handleDisplayClick}
         >
-          <FontAwesomeIcon icon={faLayerGroup} />
+          <HiAdjustments className="rotate-90"/>
           <h6>Display</h6>
-          {display && <FontAwesomeIcon icon={faArrowDown} />}
-          {!display && <FontAwesomeIcon icon={faArrowLeft} />}
+          {display && <HiChevronUp />}
+          {!display && <HiChevronDown />}
         </button>
         {display && <HeaderFilter setDisplay={setDisplay} />}
       </div>
